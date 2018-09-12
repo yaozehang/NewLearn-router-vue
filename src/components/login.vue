@@ -20,6 +20,12 @@
         password: ''
       }
     },
+    created() {
+      console.log(this.$router)
+      console.log(this.$route)
+      console.log(this.$route.params)
+      console.log(this.$route.query)
+    },
     methods: {
       handleSubmit() {
         axios.post('http://localhost:3000/login',{username:this.username,password:this.password}).then(res =>{

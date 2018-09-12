@@ -30,6 +30,37 @@ const router = new Router({
       meta:{
         title:'登录'
       }
+    },
+    {
+      path:"/main",
+      component: () => import("../views/Layout"),
+      redirect:'/main/home',
+      children:[
+        {
+          path: "home",
+          component: home,
+          name:'home1',
+          meta:{
+            title:'首页'
+          }
+        },
+        {
+          path: "about/:id",
+          component: () => import("../components/about"),
+          name:'about1',
+          meta:{
+            title:'详情'
+          }
+        },
+        {
+          path: "login",
+          component: () => import("../components/login"),
+          name:"login",
+          meta:{
+            title:'登录'
+          }
+        },
+      ]
     }
   ]
 });
