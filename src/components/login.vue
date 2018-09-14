@@ -28,7 +28,7 @@
     },
     methods: {
       handleSubmit() {
-        axios.post('http://localhost:3000/login',{username:this.username,password:this.password}).then(res =>{
+        axios.post('http://localhost:3000/login',{username:this.username,password:this.password},{withCredentials:true}).then(res =>{
           if(res.data.code == 200){
             alert('登录成功')
             this.$router.push('/')

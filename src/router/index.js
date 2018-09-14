@@ -60,6 +60,10 @@ const router = new Router({
             title:'登录'
           }
         },
+        {
+          path:"vuexDemo",
+          component: () => import("../components/vuexDemo")
+        }
       ]
     }
   ]
